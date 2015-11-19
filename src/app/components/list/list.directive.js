@@ -9,9 +9,9 @@
   function memberList() {
     var directive = {
       restrict: 'E',
+      templateUrl: 'app/components/list/list.html',
       scope: {},
       bindToController: {memberName: '='},
-      templateUrl: 'app/components/list/list.html',
       controller: ListController,
       controllerAs: 'vm'
     };
@@ -23,7 +23,6 @@
       var vm = this;
       vm.members = ['Rocco', 'Giorgio']
 
-      // "vm.creation" is avaible by directive option "bindToController: true"
       vm.addMember = function () {
         vm.members.push(vm.memberName);
     }
