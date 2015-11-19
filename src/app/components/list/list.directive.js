@@ -11,7 +11,7 @@
       restrict: 'E',
       templateUrl: 'app/components/list/list.html',
       scope: {
-          memberName: '='
+        memberInfo: '='
       },
       controller: ListController,
       controllerAs: 'vm',
@@ -21,14 +21,13 @@
     return directive;
 
     /** @ngInject */
-    function ListController() {
+    function ListController($scope) {
       var vm = this;
       vm.members = ['Rocco', 'Giorgio']
 
       // "vm.creation" is avaible by directive option "bindToController: true"
       vm.addMember = function () {
-        console.log(vm.TeamMemberName);
-        // vm.members.push(vm.newTeamMember);
+        vm.members.push($scope.memberInfo);
     }
 
     }

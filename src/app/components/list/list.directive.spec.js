@@ -6,7 +6,7 @@
    * This example is not perfect.
    * Test should check if MomentJS have been called
    */
-  describe('directive navbar', function() {
+  describe('directive memberList', function() {
     // var $window;
     var vm;
     var el;
@@ -16,11 +16,7 @@
     beforeEach(inject(function($compile, $rootScope) {
       // spyOn(_$window_, 'moment').and.callThrough();
       // $window = _$window_;
-
-      timeInMs = new Date();
-      timeInMs = timeInMs.setHours(timeInMs.getHours() - 24);
-
-      el = angular.element('<acme-navbar creation-date="' + timeInMs + '"></acme-navbar>');
+      el = angular.element('<member-list></member-list>');
 
       $compile(el)($rootScope.$new());
       $rootScope.$digest();
