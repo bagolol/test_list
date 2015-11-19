@@ -1,0 +1,16 @@
+<ul class="list">
+  <div class="col-lg-6">
+    <div class="input-group">
+      <input type="text" value="TeamMemeberName" ng-model="newTeamMember"
+        placeholder="add a team member..."class="form-control">
+      <span class="input-group-btn">
+      <button class="btn btn-default" type="button" ng-click="addMember()">Add</button>
+      </span>
+    </div>
+    <!-- /input-group -->
+  </div>
+  <!-- /.col-lg-6 -->
+  <li ng-repeat="member in members">
+    <a href="#">{{member}</a>  <a ng-click="deleteItem($index)" class="delete-item">x</a>
+  </li>
+</ul>

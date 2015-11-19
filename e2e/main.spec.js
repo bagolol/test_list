@@ -15,7 +15,7 @@ describe('The main view', function () {
   // });
 
   it('should show an input field', function () {
-    expect(page.nameInput.getText()).toBe('@');
+    expect(page.nameInput.getAttribute('placeholder')).toBe('Add team member...')
   });
 
 });
