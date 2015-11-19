@@ -1,7 +1,7 @@
 <ul class="list">
   <div class="col-lg-6">
     <div class="input-group">
-      <input type="text" value="team" ng-model="memberInfo"
+      <input type="text" value="team" ng-model="vm.memberName"
         placeholder="add a team member..."class="form-control"/>
       <span class="input-group-btn">
       <button class="btn btn-default" type="button" ng-click="vm.addMember()">Add</button>
@@ -11,6 +11,5 @@
     <ul ng-repeat="member in vm.members">
   {{member}}
   </ul>
-  <a>{{memberInfo.name}}</a>
   </div>
   <!-- /.col-lg-6 -->

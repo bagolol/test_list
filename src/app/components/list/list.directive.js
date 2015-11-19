@@ -9,27 +9,24 @@
   function memberList() {
     var directive = {
       restrict: 'E',
+      scope: {},
+      bindToController: {memberName: '='},
       templateUrl: 'app/components/list/list.html',
-      scope: {
-        memberInfo: '='
-      },
       controller: ListController,
-      controllerAs: 'vm',
-      bindToController: true
+      controllerAs: 'vm'
     };
 
     return directive;
 
     /** @ngInject */
-    function ListController($scope) {
+    function ListController() {
       var vm = this;
       vm.members = ['Rocco', 'Giorgio']
 
       // "vm.creation" is avaible by directive option "bindToController: true"
       vm.addMember = function () {
-        vm.members.push($scope.memberInfo);
+        vm.members.push(vm.memberName);
     }
-
     }
   }
 
