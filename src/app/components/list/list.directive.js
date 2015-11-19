@@ -21,7 +21,7 @@
     /** @ngInject */
     function ListController() {
       var vm = this;
-      vm.members = ['Rocco', 'Giorgio']
+      vm.members = [];
 
       vm.addMember = function () {
         vm.members.push(vm.memberName);

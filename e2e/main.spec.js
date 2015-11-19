@@ -15,7 +15,17 @@ describe('The main view', function () {
   // });
 
   it('should show an input field', function () {
-    expect(page.nameInput.getAttribute('placeholder')).toBe('Add team member...')
+    expect(page.nameInput.getAttribute('placeholder')).toBe('Add a team member...')
   });
+
+   it('should show no names when the page loads', function () {
+    expect(page.namesList.isPresent()).toBeFalsy();
+  });
+
+   it('should show a list of submitted names', function() {
+      page.nameInput.sendKeys('John');
+      page.addButton.click();
+      expect(page.namesList.getText()).toBe('John');
+   })
 
 });

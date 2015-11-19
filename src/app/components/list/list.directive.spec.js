@@ -1,11 +1,6 @@
 (function() {
   'use strict';
 
-  /**
-   * @todo Complete the test
-   * This example is not perfect.
-   * Test should check if MomentJS have been called
-   */
   describe('directive memberList', function() {
     // var $window;
     var vm;
@@ -14,8 +9,7 @@
 
     beforeEach(module('testBBC'));
     beforeEach(inject(function($compile, $rootScope) {
-      // spyOn(_$window_, 'moment').and.callThrough();
-      // $window = _$window_;
+
       el = angular.element('<member-list></member-list>');
 
       $compile(el)($rootScope.$new());

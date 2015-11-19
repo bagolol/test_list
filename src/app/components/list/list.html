@@ -2,13 +2,13 @@
   <div class="col-lg-6">
     <div class="input-group">
       <input type="text" value="team" ng-model="vm.memberName"
-        placeholder="add a team member..."class="form-control"/>
+        placeholder="Add a team member..."class="form-control"/>
       <span class="input-group-btn">
       <button class="btn btn-default" type="button" ng-click="vm.addMember()">Add</button>
       </span>
     </div>
     <!-- /input-group -->
-    <ul ng-repeat="member in vm.members">
+    <ul class="members" ng-repeat="member in vm.members">
   {{member}}
   </ul>
   </div>
