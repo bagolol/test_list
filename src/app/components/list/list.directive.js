@@ -11,7 +11,7 @@
       restrict: 'E',
       templateUrl: 'app/components/list/list.html',
       scope: {},
-      bindToController: {memberName: '='},
+      //bindToController: {memberName: '='},
       controller: ListController,
       controllerAs: 'vm'
     };
@@ -25,6 +25,8 @@
 
       vm.addMember = function () {
         vm.members.push(vm.memberName);
+        //controllo se c'e'
+
     }
     }
   }

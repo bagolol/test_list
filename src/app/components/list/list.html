@@ -1,11 +1,12 @@
 <ul class="list">
   <div class="col-lg-6">
     <div class="input-group">
-      <input type="text" value="team" ng-model="vm.memberName"
-        placeholder="Add a team member..."class="form-control"/>
+      <form name="nameInput">
+      <input type="text" ng-model="vm.memberName" placeholder="Add a team member..."class="form-control" ng-required="true">
       <span class="input-group-btn">
-      <button class="btn btn-default" type="button" ng-click="vm.addMember()">Add</button>
+      <button class="btn btn-default" type="submit" ng-click="vm.addMember()" ng-disabled="!nameInput.$valid">Add</button>
       </span>
+    </form>
     </div>
     <!-- /input-group -->
     <ul class="members" ng-repeat="member in vm.members">
