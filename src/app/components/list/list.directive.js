@@ -11,7 +11,7 @@
       restrict: 'E',
       templateUrl: 'app/components/list/list.html',
       scope: {
-          creationDate: '='
+          memberName: '='
       },
       controller: ListController,
       controllerAs: 'vm',
@@ -23,9 +23,13 @@
     /** @ngInject */
     function ListController() {
       var vm = this;
-      vm.members = ['test1', 'test2'];
+      vm.members = ['Rocco', 'Giorgio']
 
       // "vm.creation" is avaible by directive option "bindToController: true"
+      vm.addMember = function () {
+        console.log(vm.TeamMemberName);
+        // vm.members.push(vm.newTeamMember);
+    }
 
     }
   }
