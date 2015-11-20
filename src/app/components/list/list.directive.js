@@ -21,6 +21,7 @@
     /** @ngInject */
     function ListController() {
       var vm = this;
+      vm.onlyLetters = /^[A-z]+$/;
       vm.members = [];
 
       vm.addMember = function () {

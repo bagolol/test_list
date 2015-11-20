@@ -1,16 +1,17 @@
-<ul class="list">
-  <div class="col-lg-6">
-    <div class="input-group">
-      <form name="nameInput">
-      <input type="text" ng-model="vm.memberName" placeholder="Add a team member..."class="form-control" ng-required="true">
-      <span class="input-group-btn">
-      <button class="btn btn-default" type="submit" ng-click="vm.addMember()" ng-disabled="!nameInput.$valid">Add</button>
-      </span>
+<div class="col-md-6 col-md-offset-3">
+  <div class="form-group">
+    <form name="nameInput">
+      <input type="text" ng-model="vm.memberName" placeholder="Add a team member..."class="form-control" ng-required="true" ng-pattern="vm.onlyLetters">
+        <span class="input-group-btn">
+          <div class="pull-right">
+            <button class="btn btn-default" type="submit" ng-click="vm.addMember()" ng-disabled="!nameInput.$valid">Add</button>
+          </div>
+        </span>
     </form>
-    </div>
-    <!-- /input-group -->
-    <ul class="members" ng-repeat="member in vm.members">
-  {{member}}
-  </ul>
   </div>
-  <!-- /.col-lg-6 -->
+  <!-- /input-group -->
+  <ul class="members" ng-repeat="member in vm.members">
+    {{member}}
+  </ul>
+</div>
+<!-- /.col-lg-6 -->
