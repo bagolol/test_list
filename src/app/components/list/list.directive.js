@@ -16,6 +16,7 @@
       controllerAs: 'vm'
     };
 
+
     return directive;
 
     /** @ngInject */
@@ -26,9 +27,18 @@
 
       vm.addMember = function () {
         vm.members.push(vm.memberName);
-        vm.memberName = ""
+        vm.memberName = "";
+      };
+
+      vm.isDuplicated = function (value) {
+        var names = vm.members;
+        for (var i = 0; i < names.lenght; i++) {
+          if (names[i] == value) {
+            return true
+          }
+        };
+      };
     }
-    }
-  }
+  };
 
 })();
