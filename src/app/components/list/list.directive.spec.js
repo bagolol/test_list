@@ -26,5 +26,12 @@
       expect(vm).toEqual(jasmine.any(Object));
     });
 
+    it ('should add members', function(){
+      vm.addMember();
+      expect(vm.members.length).toEqual(1);
+    });
+
+
+
   });
 })();

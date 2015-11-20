@@ -15,4 +15,6 @@ var MainPage = function() {
   this.thumbnailEls = element(by.css('body')).all(by.repeater('awesomeThing in main.awesomeThings'));
 };
 
+
+
 module.exports = new MainPage();

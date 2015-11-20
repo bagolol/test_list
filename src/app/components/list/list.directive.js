@@ -26,8 +26,7 @@
 
       vm.addMember = function () {
         vm.members.push(vm.memberName);
-        //controllo se c'e'
-
+        vm.memberName = ""
     }
     }
   }
