@@ -16,7 +16,6 @@
       controllerAs: 'vm'
     };
 
-
     return directive;
 
     /** @ngInject */

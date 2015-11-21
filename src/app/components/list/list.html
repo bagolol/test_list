@@ -9,10 +9,9 @@
               ng-model="vm.memberName"
               placeholder="Add a team member..."
               class="form-control"
-              ng-pattern="vm.onlyLetters"
               ng-minlength="1"
               ng-maxlength="20"
-              ng-pattern="^[A-Za-z]+$"
+              ng-pattern="/^[A-z]+$/"
               required/>
 
         <span class="input-group-btn">
