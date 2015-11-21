@@ -1,17 +1,29 @@
+
+<!-- /.col-lg-6 -->
 <div class="col-md-6 col-md-offset-3">
-  <div class="form-group">
-    <form name="nameInput">
-      <input type="text" ng-model="vm.memberName" placeholder="Add a team member..."class="form-control" ng-required="true" ng-pattern="vm.onlyLetters">
-        <span class="input-group-btn">
+      <div ng-messages="nameInput.employeeName.$error">
+        <div ng-messages-include="app/components/list/error-messages.html"></div>
+      </div>
+  <form name="nameInput">
+    <div class="form-group">
+      <input  type="text"
+              name="employeeName"
+              ng-model="vm.memberName"
+              placeholder="Add a team member..."
+              ng-pattern="vm.onlyLetters"
+              ng-minlength="5"
+              required />
+      <span class="input-group-btn">
           <div class="pull-right">
-            <button class="btn btn-default" type="submit" ng-click="vm.addMember()" ng-disabled="!nameInput.$valid">Add</button>
+            <button class="btn btn-default"
+                    type="submit"
+                    ng-click="vm.addMember()"
+                    ng-disabled="!nameInput.$valid">Add</button>
           </div>
-        </span>
-    </form>
-  </div>
-  <!-- /input-group -->
-  <ul class="members" ng-repeat="member in vm.members">
+      </span>
+    </div>
+  </form>
+</div>
+    <ul class="members" ng-repeat="member in vm.members">
     {{member}}
   </ul>
-</div>
-<!-- /.col-lg-6 -->
