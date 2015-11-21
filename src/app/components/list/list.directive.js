@@ -21,6 +21,7 @@
     /** @ngInject */
     function ListController() {
       var vm = this;
+      vm.submitted = false;
       vm.members = [];
 
       vm.addMember = function () {
