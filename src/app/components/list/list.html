@@ -2,26 +2,27 @@
   <div ng-messages="nameInput.$error" ng-if="nameInput.$dirty">
     <div ng-messages-include="app/components/error/input-error-messages.html"></div>
   </div>
+  <div class="form-group">
     <form name="nameInput">
       <input  type="text"
-              name="name"
-              ng-model="vm.memberName"
-              placeholder="Add a team member..."
-              class="form-control"
-              ng-minlength="1"
-              ng-maxlength="20"
-              ng-pattern="/^[A-z]+$/"
-              required/>
+        name="name"
+        ng-model="vm.memberName"
+        placeholder="Add a team member..."
+        class="form-control"
+        ng-minlength="1"
+        ng-maxlength="20"
+        ng-pattern="/^[A-z]+$/"
+        required/>
       <div class="pull-right">
         <button class="btn btn-default"
-                type="submit"
-                ng-click="vm.addMember()"
-                ng-disabled="!nameInput.name.$valid">Add</button>
+          type="submit"
+          ng-click="vm.addMember()"
+          ng-disabled="!nameInput.name.$valid">Add</button>
       </div>
     </form>
-</div>
- </div>
+  </div>
   <!-- /input-group -->
   <ul class="members" ng-repeat="member in vm.members">
     {{member}}
   </ul>
+</div>
