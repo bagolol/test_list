@@ -10,12 +10,11 @@ var MainPage = function() {
   this.nameInput = element(by.css('.form-control'))
   this.namesList = element(by.css('ul.members'))
   this.addButton = element(by.css('.btn.btn-default'))
-  this.thumbnailEls = element(by.css('body')).all(by.repeater('awesomeThing in main.awesomeThings'));
-  this.noNumberError = element(by.css('[ng-message=pattern]'));
-  this.fieldEmptyError = element(by.css('[ng-message=required]'));
-  this.maxLengthError = element(by.css('[ng-message=maxlength]'));
+  this.noNumberError = $('[ng-show="nameInput.name.$error.pattern"]');
+  this.fieldEmptyError = $('[ng-show="nameInput.name.$error.required"]');
+  this.maxLengthError = $('[ng-show="nameInput.name.$error.maxlength"]');
+  this.existingNameError = $('[ng-show="nameInput.name.$error.username"]');
+  this.nameCheckMessage = $('[ng-show="nameInput.name.$pending.username"]');
 };
-
-
 
 module.exports = new MainPage();

@@ -1,27 +1,41 @@
+
+
 <div class="col-md-6 col-md-offset-3">
-  <div ng-messages="nameInput.$error" ng-if="nameInput.$dirty">
-    <div ng-messages-include="app/components/error/input-error-messages.html"></div>
-  </div>
   <div class="form-group">
-    <form name="nameInput">
-      <input  type="text"
-        name="name"
-        ng-model="vm.memberName"
-        placeholder="Add a team member..."
-        class="form-control"
-        ng-maxlength="15"
-        ng-pattern="/^[A-z]+$/"
-        required/>
-      <div class="pull-right">
-        <button class="btn btn-default"
-          type="submit"
-          ng-click="vm.addMember()"
-          ng-disabled="!nameInput.name.$valid">Add</button>
+    <form name="nameInput" ng-submit="vm.addMember()" novalidate>
+
+      <div class="form-group">
+        <input  class="form-control"
+                name="name"
+                ng-model="vm.memberName"
+                placeholder="Insert name.."
+                ng-model-options="{ updateOn: 'default blur', debounce: { default: 450, blur: 0 } }"
+                ng-pattern="/^[A-z]+$/"
+                ng-maxlength="10"
+                username
+                required>
       </div>
+      <div class="alert alert-danger required" ng-show="nameInput.name.$error.required && nameInput.name.$dirty">Please enter a developer's name..
+      </div>
+       <div class="alert alert-danger" ng-show="nameInput.name.$error.pattern">Input can't be a number!
+      </div>
+
+       <div class="alert alert-info" ng-show="nameInput.name.$pending.username">Checking if this name is available...
+      </div>
+
+      <div class="alert alert-danger" ng-show="nameInput.name.$error.username">This developer has already been added to the list!
+      </div>
+
+      <div class="alert alert-danger" ng-show="nameInput.name.$error.maxlength">This name is too long!
+      </div>
+
+      <button type="submit" class="btn btn-default pull-right" ng-disabled="!nameInput.$valid">
+        Save
+      </button>
     </form>
   </div>
-  <!-- /input-group -->
+
   <ul class="members" ng-repeat="member in vm.members">
-    {{member}}
+      {{member}}
   </ul>
 </div>

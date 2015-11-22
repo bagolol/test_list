@@ -3,8 +3,8 @@
 
 
 var Helpers = function() {
-  this.addName = function() {
-    page.nameInput.sendKeys('John');
+  this.addName = function(name) {
+    page.nameInput.sendKeys(name);
     page.addButton.click();
   }
 };

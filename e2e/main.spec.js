@@ -21,38 +21,53 @@ describe('The main view', function () {
   describe('the homepage', function(){
 
     it('should show an input field', function () {
-      expect(page.nameInput.getAttribute('placeholder')).toBe('Add a team member...')
+      expect(page.nameInput.getAttribute('placeholder')).toBe('Insert name..')
     });
 
-     it('should show no names when the page loads', function () {
+    it('should show no names when the page loads', function () {
       expect(page.namesList.isPresent()).toBeFalsy();
     });
-  });
-
-  describe('in', function(){
 
     it('should show a list of submitted names', function() {
-      person.addName()
+      person.addName('John')
       expect(page.namesList.getText()).toBe('John');
     });
+
+  });
+
+  describe('inputting names', function(){
+
 
     it('should not allow inputting numbers and show an error', function(){
       page.nameInput.sendKeys(1);
       expect(page.addButton.isEnabled()).toBe(false);
-      expect(page.noNumberError.getText()).toBe('Your input can\'t be a number');
+      expect(page.noNumberError.isDisplayed()).toBeTruthy();
     });
 
-    it('should not allow an empty input', function(){
-      page.nameInput.sendKeys();
+    xit('should not allow an empty input', function(){
+      person.addName('')
       expect(page.addButton.isEnabled()).toBe(false);
-      expect(page.fieldEmptyError.getText()).toBe('Input can\'t be empty...');
+      expect(page.noNumberError.isDisplayed()).toBeTruthy();
     });
 
     it('should not allow a very long name', function(){
       page.nameInput.sendKeys('johnjohnjohnjohn');
       expect(page.addButton.isEnabled()).toBe(false);
-      expect(page.maxLengthError.getText()).toBe('Your input is too long');
+      expect(page.maxLengthError.isDisplayed()).toBeTruthy();
     });
+
+    xit('should display a message while checking if name is duplicated', function(){
+      page.nameInput.sendKeys('John');
+      expect(page.nameCheckMessage.isDisplayed()).toBeTruthy();
+      expect(page.addButton.isEnabled()).toBe(true);
+    });
+
+    it('should not allow to input the same name twice', function(){
+      person.addName('John')
+      person.addName('John')
+      expect(page.existingNameError.isDisplayed()).toBeTruthy();
+    });
+
 
     it('should clear the input field on submit', function(){
       person.addName()

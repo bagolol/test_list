@@ -26,7 +26,7 @@
 
       vm.addMember = function () {
         vm.members.push(vm.memberName);
-        vm.memberName = "";
+        vm.memberName = null;
       };
     }
   }
