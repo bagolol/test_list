@@ -15,7 +15,7 @@
                 username
                 required>
       </div>
-      <div class="alert alert-danger required" ng-show="nameInput.name.$error.required && nameInput.name.$dirty">Please enter a developer's name..
+      <div class="alert alert-danger required" ng-show="nameInput.name.$error.required && nameInput.name.$touched">Please enter a developer's name..
       </div>
        <div class="alert alert-danger" ng-show="nameInput.name.$error.pattern">Input can't be a number!
       </div>
@@ -34,8 +34,15 @@
       </button>
     </form>
   </div>
-
-  <ul class="members" ng-repeat="member in vm.members">
-      {{member}}
+</div>
+<div class="col-md-6 col-md-offset-3">
+  <ul class="list-group"
+    <li class="list-group-item" ng-repeat="member in vm.members">{{member}}</li>
   </ul>
+</div>
+<div ng-if="vm.members.length > 3" class="col-md-6 col-md-offset-3">
+  <div class="btn-group" role="group" aria-label="...">
+    <button type="button" class="btn btn-info">Pair</button>
+    <button type="button" class="btn btn-danger">Clear</button>
+  </div>
 </div>
