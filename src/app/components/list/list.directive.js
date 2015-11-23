@@ -3,19 +3,29 @@
 
   angular
     .module('testBBC')
-    .directive('pairedMembers', pairedMembers);
+    .directive('pairDevs', pairDevs);
 
   /** @ngInject */
-  function pairedMembers() {
+  function pairDevs() {
     var directive = {
       restrict: 'E',
+      scope: {
+        list: '=list'
+      },
       templateUrl: 'app/components/list/list.html',
-      link: function(scope, elm, attrs, ctrl) {
-        console.log(scope.vm);
-      }
+      controller: PairController,
+      controllerAs: 'vm'
     };
 
     return directive;
-  }
 
+    /** @ngInject */
+    function PairController($scope) {
+      var vm = this;
+      vm.pairDevs = function () {
+        console.log($scope.list);
+
+      };
+    }
+  }
 })();
