@@ -7,6 +7,11 @@ var Helpers = function() {
     page.nameInput.sendKeys(name);
     page.addButton.click();
   }
+  this.addThreeDevs = function() {
+    this.addName('John');
+    this.addName('Luke');
+    this.addName('Dave');
+  }
 };
 
 module.exports = new Helpers();

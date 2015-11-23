@@ -9,6 +9,7 @@ var MainPage = function() {
   this.jumbEl = element(by.css('.jumbotron'));
   this.nameInput = element(by.css('.form-control'));
   this.namesList = element.all(by.repeater('member in vm.members'));
+  this.pairsList = element.all(by.repeater('pair in vm.pairs'));
   this.addButton = element(by.css('.btn.btn-default'));
   this.noNumberError = $('[ng-show="nameInput.name.$error.pattern"]');
   this.fieldEmptyError = $('[ng-show="nameInput.name.$error.required"]');

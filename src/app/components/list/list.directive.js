@@ -23,8 +23,8 @@
     function PairController($scope) {
       var vm = this;
       var list = $scope.list
-      vm.pairs = [];
       vm.pairDevs = function () {
+        vm.pairs = [];
         for (var i = 0; i < list.length; i++) {
           for (var y = i +1; y < list.length; y++) {
             var pair = (list[i] + ' - ' + list[y]);

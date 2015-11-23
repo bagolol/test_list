@@ -70,19 +70,31 @@ describe('The main view', function () {
   describe('pairing devs', function(){
 
     it('should show a pairing button when 3 devs have been added', function(){
-      person.addName('John');
-      person.addName('Luke');
-      person.addName('Dave');
+      person.addThreeDevs();
       expect(page.pairButton.isDisplayed()).toBeTruthy();
     });
 
     it('should clear the list with a click', function(){
-      person.addName('John');
-      person.addName('Luke');
-      person.addName('Dave');
+      person.addThreeDevs();
       page.clearButton.click();
       expect(page.namesList.count()).toBe(0);
       expect(page.pairButton.isDisplayed()).toBeFalsy();
+    });
+
+    it('should show the pairs under the developers list', function(){
+      person.addThreeDevs();
+      page.pairButton.click();
+      expect(page.namesList.count()).toBe(3);
+      expect(page.pairsList.count()).toBe(3);
+    });
+
+     it('should update the developers list when a new dev is added to the list', function(){
+      person.addThreeDevs();
+      page.pairButton.click();
+      person.addName('Marc');
+      page.pairButton.click();
+      expect(page.namesList.count()).toBe(4);
+      expect(page.pairsList.count()).toBe(6);
     });
   });
 
