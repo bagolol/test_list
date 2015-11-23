@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  describe('directive memberList', function() {
+  describe('directive nameInput', function() {
     // var $window;
     var vm;
     var el;
@@ -10,7 +10,7 @@
     beforeEach(module('testBBC'));
     beforeEach(inject(function($compile, $rootScope) {
 
-      el = angular.element('<member-list></member-list>');
+      el = angular.element('<name-input></name-input>');
 
       $compile(el)($rootScope.$new());
       $rootScope.$digest();
@@ -30,8 +30,5 @@
       vm.addMember();
       expect(vm.members.length).toEqual(1);
     });
-
-
-
   });
 })();

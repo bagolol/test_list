@@ -3,13 +3,13 @@
 
   angular
     .module('testBBC')
-    .directive('memberList', memberList);
+    .directive('nameInput', nameInput);
 
   /** @ngInject */
-  function memberList() {
+  function nameInput() {
     var directive = {
       restrict: 'E',
-      templateUrl: 'app/components/list/list.html',
+      templateUrl: 'app/components/form/form.html',
       scope: {},
       //bindToController: {memberName: '='},
       controller: ListController,
