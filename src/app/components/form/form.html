@@ -1,6 +1,6 @@
 
 
-<div class="col-md-6 col-md-offset-3">
+<div class="col-md-4 col-md-offset-4">
   <div class="form-group">
     <form name="nameInput" ng-submit="vm.addMember()" novalidate>
 
@@ -15,7 +15,13 @@
                 username
                 required>
       </div>
-      <div class="alert alert-danger required" ng-show="nameInput.name.$error.required && nameInput.name.$touched">Please enter a developer's name..
+      <button type="submit" class="btn btn-default pull-right" ng-disabled="!nameInput.$valid">
+        Save
+      </button>
+    </form>
+  </div>
+  <div class="col-md-10">
+    <div class="alert alert-danger required" ng-show="nameInput.name.$error.required && nameInput.name.$touched">Please enter a developer's name..
       </div>
        <div class="alert alert-danger" ng-show="nameInput.name.$error.pattern">Input can't be a number!
       </div>
@@ -28,12 +34,7 @@
 
       <div class="alert alert-danger" ng-show="nameInput.name.$error.maxlength">This name is too long!
       </div>
-
-      <button type="submit" class="btn btn-default pull-right" ng-disabled="!nameInput.$valid">
-        Save
-      </button>
-    </form>
-  </div>
+    </div>
 </div>
 <div class="col-md-6 col-md-offset-3">
   <ul class="list-group"
