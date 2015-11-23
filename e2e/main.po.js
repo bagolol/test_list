@@ -15,7 +15,7 @@ var MainPage = function() {
   this.maxLengthError = $('[ng-show="nameInput.name.$error.maxlength"]');
   this.existingNameError = $('[ng-show="nameInput.name.$error.username"]');
   this.nameCheckMessage = $('[ng-show="nameInput.name.$pending.username"]');
-  this.pairButton = element(by.css('.btn.btn-info.pair'));
+  this.pairButton = element(by.css('.btn.btn-info'));
   this.clearButton = element(by.css('.btn.btn-danger'));
 };
 
