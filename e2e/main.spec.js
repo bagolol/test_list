@@ -10,14 +10,6 @@ describe('The main view', function () {
     person = require('./helpers');
   });
 
-
-
-  // it('should include jumbotron with correct data', function() {
-  //   expect(page.h1El.getText()).toBe('\'Allo, \'Allo!');
-  //   expect(page.imgEl.getAttribute('src')).toMatch(/assets\/images\/yeoman.png$/);
-  //   expect(page.imgEl.getAttribute('alt')).toBe('I\'m Yeoman');
-  // });
-
   describe('the homepage', function(){
 
     it('should show an input field', function () {
@@ -25,12 +17,12 @@ describe('The main view', function () {
     });
 
     it('should show no names when the page loads', function () {
-      expect(page.namesList.isPresent()).toBeFalsy();
+      expect(page.namesList.count()).toBe(0);
     });
 
     it('should show a list of submitted names', function() {
       person.addName('John')
-      expect(page.namesList.getText()).toBe('John');
+      expect(page.namesList.count()).toBe(1);
     });
 
   });
@@ -77,12 +69,20 @@ describe('The main view', function () {
 
   describe('pairing devs', function(){
 
-
     it('should show a pairing button when 3 devs have been added', function(){
       person.addName('John');
       person.addName('Luke');
       person.addName('Dave');
       expect(page.pairButton.isDisplayed()).toBeTruthy();
+    });
+
+    it('should clear the list with a click', function(){
+      person.addName('John');
+      person.addName('Luke');
+      person.addName('Dave');
+      page.clearButton.click();
+      expect(page.namesList.count()).toBe(0);
+      expect(page.pairButton.isDisplayed()).toBeFalsy();
     });
   });
 

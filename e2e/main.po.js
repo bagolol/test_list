@@ -16,6 +16,7 @@ var MainPage = function() {
   this.existingNameError = $('[ng-show="nameInput.name.$error.username"]');
   this.nameCheckMessage = $('[ng-show="nameInput.name.$pending.username"]');
   this.pairButton = element(by.css('.btn.btn-info.pair'));
+  this.clearButton = element(by.css('.btn.btn-danger'));
 };
 
 module.exports = new MainPage();
