@@ -2,3 +2,11 @@
     <button type="button" ng-click="vm.pairDevs()" class="btn btn-info  btn-block">Pair</button>
     <button type="button" ng-click="vm.clear()" class="btn btn-danger btn-block">Clear</button>
 </div>
+
+<div class="col-md-4 col-md-offset-4">
+  <table class="table table-bordered table-striped">
+    <tr ng-repeat="pair in vm.pairs">
+        <td>{{pair}}</td>
+    </tr>
+  </table>
+</div>
