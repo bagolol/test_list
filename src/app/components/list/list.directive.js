@@ -26,6 +26,10 @@
         console.log($scope.list);
 
       };
+
+      vm.clear = function () {
+        $scope.list = [];
+      }
     }
   }
 })();

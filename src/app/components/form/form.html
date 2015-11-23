@@ -37,9 +37,11 @@
     </div>
 </div>
 <div class="col-md-4 col-md-offset-4">
-  <ul class="list-group"
-    <li class="list-group-item" ng-repeat="member in vm.members">{{member}}</li>
-  </ul>
+  <table>
+    <tr ng-repeat="member in vm.members">
+        <td>{{member}}</td>
+    </tr>
+  </table>
 </div>
 <div ng-show="vm.members.length > 2">
   <pair-devs list="vm.members"></pair-devs>

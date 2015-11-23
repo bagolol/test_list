@@ -27,7 +27,7 @@ app.directive('username', function($q, $timeout) {
             def.reject();
           }
 
-        }, 1000);
+        }, 10);
 
         return def.promise;
       };

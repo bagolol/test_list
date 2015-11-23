@@ -63,8 +63,8 @@ describe('The main view', function () {
     });
 
     it('should not allow to input the same name twice', function(){
-      person.addName('John')
-      person.addName('John')
+      person.addName('John');
+      person.addName('John');
       expect(page.existingNameError.isDisplayed()).toBeTruthy();
     });
 
@@ -72,6 +72,17 @@ describe('The main view', function () {
     it('should clear the input field on submit', function(){
       person.addName()
       expect(page.nameInput.getText()).toBe('');
+    });
+  });
+
+  describe('pairing devs', function(){
+
+
+    it('should show a pairing button when 3 devs have been added', function(){
+      person.addName('John');
+      person.addName('Luke');
+      person.addName('Dave');
+      expect(page.pairButton.isDisplayed()).toBeTruthy();
     });
   });
 

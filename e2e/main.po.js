@@ -7,14 +7,15 @@
 
 var MainPage = function() {
   this.jumbEl = element(by.css('.jumbotron'));
-  this.nameInput = element(by.css('.form-control'))
-  this.namesList = element(by.css('ul.members'))
-  this.addButton = element(by.css('.btn.btn-default'))
+  this.nameInput = element(by.css('.form-control'));
+  this.namesList = element.all(by.repeater('member in vm.members'));
+  this.addButton = element(by.css('.btn.btn-default'));
   this.noNumberError = $('[ng-show="nameInput.name.$error.pattern"]');
   this.fieldEmptyError = $('[ng-show="nameInput.name.$error.required"]');
   this.maxLengthError = $('[ng-show="nameInput.name.$error.maxlength"]');
   this.existingNameError = $('[ng-show="nameInput.name.$error.username"]');
   this.nameCheckMessage = $('[ng-show="nameInput.name.$pending.username"]');
+  this.pairButton = element(by.css('.btn.btn-info.pair'));
 };
 
 module.exports = new MainPage();
