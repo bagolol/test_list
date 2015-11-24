@@ -30,10 +30,10 @@ How to run the tests
 Technologies used
 ----
 
-* interface - angular and bootstrap
-* testing - karma and protractor
-* scaffolding - yeoman
-* automating - gulp
+* interface - *angular and bootstrap*
+* testing - *karma and protractor*
+* scaffolding - *yeoman*
+* automating - *gulp*
 
 
 Notes
