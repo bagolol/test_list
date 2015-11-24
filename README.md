@@ -16,6 +16,7 @@ How to run
 ----
 
 * for local use, clone the repo to your local machine
+* `cd test_list`
 * run `npm install && bower install`
 * run `gulp serve`
 * navigate to **localhost:3000/#/**
