@@ -1,4 +1,4 @@
-
+'use strict';
 
 angular.module('testBBC').directive('username', function($q, $timeout) {
   return {

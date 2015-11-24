@@ -14,8 +14,7 @@
           creationDate: '='
       },
       controller: NavbarController,
-      controllerAs: 'vm',
-      bindToController: true
+      controllerAs: 'vm'
     };
 
     return directive;
