@@ -1,4 +1,4 @@
-Show Issues
+Pairing Generator
 ===================
 
 Task
