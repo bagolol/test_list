@@ -1,34 +1,42 @@
 (function() {
   'use strict';
-
   describe('directive pairDevs', function() {
-    // var $window;
-    var vm;
-    var el;
+
+    var scope, compile, validHTML;
+
+
+    validHTML = '<pair-devs list="[1, 2]"></pair-devs>';
 
     beforeEach(module('testBBC'));
-    beforeEach(inject(function($compile, $rootScope) {
 
-      el = angular.element('<pair-devs></pair-devs>');
-
-      $compile(el)($rootScope.$new());
-      $rootScope.$digest();
-      vm = el.isolateScope().vm;
-      // ctrl = el.controller('acmeNavbar');
+    beforeEach(inject(function($compile, $rootScope){
+        scope = $rootScope.$new();
+        compile = $compile;
     }));
 
-    it('should be compiled', function() {
-      expect(el.html()).not.toEqual(null);
+    function create() {
+        var elem, compiledElem;
+        elem = angular.element(validHTML);
+        compiledElem = compile(elem)(scope);
+        scope.$digest();
+
+        return compiledElem;
+    }
+
+    it('scope.list should be defined', function() {
+      var el = create();
+      expect(el.isolateScope().list).toBeDefined();
     });
 
-    it('should have isolate scope object with instanciate members', function() {
+    it('should have isolate scope object', function() {
+      var el = create();
+      var vm = el.isolateScope().vm;
       expect(vm).toEqual(jasmine.any(Object));
     });
 
-    it ('should add members', function(){
-      var list = ['Tom', 'John', 'Marc'];
-      vm.pairDevs();
-      expect(vm.pairs.length).toEqual(3);
+    it('should be compiled', function() {
+      var el = create();
+      expect(el.html()).not.toEqual(null);
     });
   });
 })();

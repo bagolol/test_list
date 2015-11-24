@@ -3,15 +3,15 @@
 
   describe('controllers', function(){
     var vm;
-    var $timeout;
-    var toastr;
 
     beforeEach(module('testBBC'));
-    beforeEach(inject(function(_$controller_, _$timeout_, _toastr_) {
+    beforeEach(inject(function(_$controller_) {
       vm = _$controller_('MainController');
-      $timeout = _$timeout_;
-      toastr = _toastr_;
     }));
+
+    it('should be defined', function() {
+      expect(vm).toEqual(jasmine.any(Object));
+    });
 
   });
 })();

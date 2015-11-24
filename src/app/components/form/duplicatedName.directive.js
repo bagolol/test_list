@@ -1,15 +1,12 @@
 
 
-var app = angular.module('testBBC');
-
-
-app.directive('username', function($q, $timeout) {
+angular.module('testBBC').directive('username', function($q, $timeout) {
   return {
     require: 'ngModel',
     link: function(scope, elm, attrs, ctrl) {
       var usernames = scope.vm.members;
 
-      ctrl.$asyncValidators.username = function(modelValue, viewValue) {
+      ctrl.$asyncValidators.username = function(modelValue) {
 
         if (ctrl.$isEmpty(modelValue)) {
           // consider empty model valid
