@@ -6,7 +6,7 @@
 'use strict';
 
 var MainPage = function() {
-  this.jumbEl = element(by.css('.jumbotron'));
+  this.mainTitle = element(by.css('.navbar-brand'));
   this.nameInput = element(by.css('.form-control'));
   this.namesList = element.all(by.repeater('member in vm.members'));
   this.pairsList = element.all(by.repeater('pair in vm.pairs'));

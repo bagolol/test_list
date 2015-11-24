@@ -10,6 +10,9 @@ describe('The main view', function () {
     person = require('./helpers');
   });
 
+  it('should have title', function () {
+    expect(page.mainTitle.getText()).toBe('Pair App');
+  });
 
   it('should show an input field', function () {
     expect(page.nameInput.getAttribute('placeholder')).toBe('Insert name..')
