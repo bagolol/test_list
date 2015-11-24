@@ -1,7 +1,8 @@
 
-
+<!-- name input form -->
 <div class="col-md-4 col-md-offset-4">
   <div class="form-group">
+    <label>Insert name</label>
     <form name="nameInput" ng-submit="vm.addMember()" novalidate>
 
       <div class="form-group">
@@ -20,6 +21,7 @@
       </button>
     </form>
   </div>
+  <!-- validation errors  -->
   <div class="col-md-10">
     <div class="alert alert-danger required" ng-show="nameInput.name.$error.required && nameInput.name.$touched">Please enter a developer's name..
       </div>
@@ -36,14 +38,18 @@
       </div>
     </div>
 </div>
+<!-- developers list -->
 <div class="col-md-4 col-md-offset-4" ng-if="vm.members.length != 0">
   <h5>Developers</h5>
-  <table class="table table-bordered table-striped">
-    <tr ng-repeat="member in vm.members">
-        <td>{{member}}</td>
-    </tr>
-  </table>
+  <div class="panel panel-default">
+    <table class="table table-bordered ">
+      <tr ng-repeat="member in vm.members">
+          <td>{{member}}</td>
+      </tr>
+    </table>
+  </div>
 </div>
+<!-- pairs list -->
 <div ng-show="vm.members.length > 2">
   <pair-devs list="vm.members"></pair-devs>
 </div>

@@ -9,16 +9,12 @@
 
     beforeEach(module('testBBC'));
     beforeEach(inject(function($compile, $rootScope) {
-      // spyOn(_$window_, 'moment').and.callThrough();
-      // $window = _$window_;
 
-
-      el = angular.element('<acme-navbar creation-date="' + timeInMs + '"></acme-navbar>');
+      el = angular.element('<my-navbar creation-date="' + timeInMs + '"></my-navbar>');
 
       $compile(el)($rootScope.$new());
       $rootScope.$digest();
       vm = el.isolateScope().vm;
-      // ctrl = el.controller('acmeNavbar');
     }));
 
     it('should be compiled', function() {
@@ -34,10 +30,5 @@
       expect(vm.relativeDate).toEqual(jasmine.any(String));
       expect(vm.relativeDate).toEqual('a day ago');
     });
-
-    // it('should call Moment', function() {
-    //   console.log($window.moment)
-    //   expect($window.moment).toHaveBeenCalled();
-    // });
   });
 })();

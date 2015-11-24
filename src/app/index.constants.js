@@ -4,7 +4,5 @@
 
   angular
     .module('testBBC')
-    .constant('malarkey', malarkey)
-    .constant('moment', moment);
 
 })();
