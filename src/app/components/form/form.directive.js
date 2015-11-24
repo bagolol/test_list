@@ -22,10 +22,14 @@
       vm.members = [];
 
       vm.addMember = function () {
-        vm.members.push(vm.memberName);
+        var name = upcase(vm.memberName);
+        vm.members.push(name);
         vm.memberName = '';
         $scope.nameInput.$setUntouched();
       };
+      function upcase (name) {
+        return name.charAt(0).toUpperCase() + name.slice(1);
+      }
     }
   }
 })();
