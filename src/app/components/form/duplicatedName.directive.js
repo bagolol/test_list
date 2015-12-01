@@ -24,7 +24,7 @@ angular.module('testBBC').directive('username', function($q, $timeout) {
             def.reject();
           }
 
-        }, 10);
+        }, 700);
 
         return def.promise;
       };
