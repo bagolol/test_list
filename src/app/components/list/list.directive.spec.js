@@ -41,3 +41,23 @@
   });
 })();
 
+describe('MainCtrl', function() {
+  var scope;
+
+  beforeEarch(function(){
+    module('myModule');
+
+    inject(function($controller, $rootScope) {
+      scope = $rootScope.$new();
+      var localInjections = {
+        $scope: scope,
+      };
+      $controller('MainCtrl as main', localInjections);
+    });
+  });
+
+  it('should expose title', function() {
+    expect(scope.main.title).equal('Some title');
+  });
+});
+
