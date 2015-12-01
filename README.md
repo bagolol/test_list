@@ -1,4 +1,4 @@
-Show Issues
+Pairing Generator
 ===================
 
 Task
@@ -16,6 +16,7 @@ How to run
 ----
 
 * for local use, clone the repo to your local machine
+* `cd test_list`
 * run `npm install && bower install`
 * run `gulp serve`
 * navigate to **localhost:3000/#/**
@@ -29,10 +30,10 @@ How to run the tests
 Technologies used
 ----
 
-* interface - angular and bootstrap
-* testing - karma and protractor
-* scaffolding - yeoman
-* automating - gulp
+* interface - *angular and bootstrap*
+* testing - *karma and protractor*
+* scaffolding - *yeoman*
+* automating - *gulp*
 
 
 Notes
