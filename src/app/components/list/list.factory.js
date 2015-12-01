@@ -3,9 +3,9 @@
 
   angular
     .module('testBBC')
-    .factory('pairGenerator', pairGenerator);
+    .factory('pairService', pairService);
 
-  function pairGenerator() {
+  function pairService() {
     return {
       pairNow: function(list) {
         var pairs = [];

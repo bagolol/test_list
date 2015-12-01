@@ -21,13 +21,13 @@
     return directive;
   };
 
-  PairController.$inject = ['pairGenerator'];
+  PairController.$inject = ['pairService'];
 
   /** @ngInject */
-  function PairController(pairGenerator) {
+  function PairController(pairService) {
     var vm = this;
     vm.pairDevs = function () {
-      vm.pairs = pairGenerator.pairNow(vm.list);
+      vm.pairs = pairService.pairNow(vm.list);
     };
     vm.clear = function () {
       vm.list = [];
